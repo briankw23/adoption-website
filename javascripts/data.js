@@ -1,25 +1,22 @@
 // data is where i will pass from request
-const requestData = require('./pets');
+
+const http = require('./pets');
 // const printToDom = require('./dom');
 
-let petsData = [];
-
-const successful = function () {
-  petsData = JSON.parse(this.responseText).pets;
-  console.log(petsData);
+const successXhr = function () {
+  const data = JSON.parse(this.responseText).pets;
+  // data.setDepartments(data);
+  console.log(data);
 };
 
-const failure = function () {
-  console.error('Epic Fail');
+const failXhr = function () {
+  console.error('epic fail');
 };
 
-// const getData = (data) => {
-//   return pets;
-//   console.log(pets);
-// };
-
-const start = () => {
-  requestData();
+const initializer = () => {
+  http(successXhr, failXhr);
 };
 
-module.exports = start;
+module.exports = {
+  initializer,
+};
