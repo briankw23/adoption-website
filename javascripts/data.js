@@ -1,11 +1,19 @@
 // data is where i will pass from request
 const http = require('./pets');
-const buildPets = require('./dom');
+const dom = require('./dom');
+
+const pets = [];
+
+const petSet = (petArray) => {
+  pets = petArray;
+  console.log(pets);
+};
 
 const successXhr = function () {
-  const data = JSON.parse(this.responseText).pets;
-  console.log(data);
-  buildPets(data);
+  const dataPets = JSON.parse(this.responseText).pets;
+  console.log(dataPets);
+  dom.buildPets(dataPets);
+  petSet(dataPets);
 };
 
 const failXhr = function () {

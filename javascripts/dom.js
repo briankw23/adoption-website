@@ -15,4 +15,6 @@ const printToDom = (string,divId) => {
   document.getElementById(divId).innerHTML += string;
 };
 
-module.exports = buildPets;
+module.exports = {
+  buildPets,
+};
