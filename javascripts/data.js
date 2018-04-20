@@ -3,35 +3,45 @@ const http = require('./pets');
 const dom = require('./dom');
 
 let pets = [];
-// const cats = [];
-// let dogs = [];
-// let dinos = [];
+const cats = [];
+const dogs = [];
+const dinos = [];
 
 const petSet = (petArray) => {
   pets = petArray;
-  console.log(pets);
+  getCats(pets);
+  getDogs(pets);
+  getDinos(pets);
 };
 
-const getCats = (e) => {
-  console.log(e);
-  // for (let i = 0; i < pets.length; i++) {
-  //   if (pets[i].type === 'cat') {
-  //     cats.push(pets[i]);
-  //   };
-  // };
-  // console.log('cats',cats);
+const getCats = (pets) => {
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === 'cat') {
+      cats.push(pets[i]);
+    };
+  };
+  dom.catCards(cats);
 };
 
-// const getDogs = (pets) => {
-
-// };
-// const getDinos = (pets) => {
-
-// };
+const getDogs = (pets) => {
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === 'dog') {
+      dogs.push(pets[i]);
+    };
+  };
+  dom.dogCards(dogs);
+};
+const getDinos = (pets) => {
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === 'dino') {
+      dinos.push(pets[i]);
+    };
+  };
+  dom.dinoCards(dinos);
+};
 
 const successXhr = function () {
   const dataPets = JSON.parse(this.responseText).pets;
-  // console.log(dataPets);
   dom.buildPets(dataPets);
   petSet(dataPets);
 };
@@ -46,5 +56,4 @@ const initializer = () => {
 
 module.exports = {
   initializer,
-  getCats,
 };

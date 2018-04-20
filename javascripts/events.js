@@ -1,5 +1,5 @@
 // this will include event listener and print to dom
-const data = require('./data');
+const dom = require('./dom');
 
 const allButton = document.getElementById('all');
 const catsButton = document.getElementById('cat');
@@ -7,19 +7,19 @@ const dogButton = document.getElementById('dog');
 const dinoButton = document.getElementById('dino');
 
 const allPetsEvent = (e) => {
-  allButton.addEventListener('click', data.initializer);
+  allButton.addEventListener('click', dom.allPrintToDom);
 };
 
 const allCatsEvent = (e) => {
-  catsButton.addEventListener('click', data.getCats);
+  catsButton.addEventListener('click', dom.catsPrintToDom);
 };
 
 const allDogsEvent = () => {
-  dogButton.addEventListener('click', data.getDogs);
+  dogButton.addEventListener('click', dom.dogsPrintToDom);
 };
 
 const allDinoEvent = () => {
-  dinoButton.addEventListener('click', data.getDino);
+  dinoButton.addEventListener('click', dom.dinosPrintToDom);
 };
 
 module.exports = {
