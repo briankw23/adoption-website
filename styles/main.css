@@ -4,3 +4,18 @@ body{
 #main{
     border: solid black 2px;
 }
+#dog{
+ color: blue;
+ text-transform: uppercase;
+ font-weight: bold;
+}
+#cat{
+  color: Red;
+  text-transform: uppercase;
+  font-weight: bold;
+ }
+ #dino{
+  color:lightsalmon;
+  text-transform: uppercase;
+  font-weight: bold;
+ }
