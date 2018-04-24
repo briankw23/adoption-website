@@ -19,3 +19,6 @@ body{
   text-transform: uppercase;
   font-weight: bold;
  }
+ .space{
+   padding: 10px;
+ }
