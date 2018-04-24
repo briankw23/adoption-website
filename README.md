@@ -1,6 +1,10 @@
 ## Adoption Website
 
+This page showcases a group of pets ready for adoption.
+
 # Description
+
+Select from from all pets, cats, dogs, or dinos
 
 ## Screenshots
 
